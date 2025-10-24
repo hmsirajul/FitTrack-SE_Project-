@@ -24,6 +24,7 @@
 </head>
 
 <body> 
+
   <!-- ===== HEADER SECTION ===== -->
  <header class="site-header" style="background-color: black; color: white; padding: 10px 0;">
   <nav class="nav container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 20px;">
@@ -35,12 +36,12 @@
     </a>
 
     <!-- Navigation Links -->
-    <ul class="nav-links" style="list-style: none; display: flex; align-items: center; margin: 0; padding: 0;">
-      <li style="margin-right: 15px;"><a href="#features" style="color: white; text-decoration: none;">Home</a></li> <!--Features-->
-      <li style="margin-right: 15px;"><a href="#plans" style="color: white; text-decoration: none;">Trainer</a></li> <!--Workout Plans-->
-      <li style="margin-right: 15px;"><a href="#progress" style="color: white; text-decoration: none;">Class</a></li> <!--Progress-->
-      <li style="margin-right: 15px;"><a href="#community" style="color: white; text-decoration: none;">Community</a></li> <!--Community-->
-      <li style="margin-right: 15px;"><a href="blog.html" style="color: white; text-decoration: none;">Trainer</a></li> <!--About-->
+      <ul class="nav-links" style="list-style:none; display:flex; align-items:center; margin:0; padding:0;">
+        <li style="margin-right:15px;"><a href="index.html" style="color:white; text-decoration:none;">Home</a></li>
+        <li style="margin-right:15px;"><a href="#plans" style="color:white; text-decoration:none;">Services</a></li>
+        <li style="margin-right:15px;"><a href="class.html" style="color:white; text-decoration:none;">Class</a></li>
+        <li style="margin-right:15px;"><a href="#community" style="color:white; text-decoration:none;">Community</a></li>
+        <li style="margin-right:15px;"><a href="blog.html" style="color:white; text-decoration:none;">Trainer</a></li>
 
       <!-- Login Dropdown -->
       <li style="position: relative; margin-right: 10px;">
@@ -83,85 +84,159 @@
 
 </header>
 
-
-<!-- TRAINERS -->
-  <section id="trainers" class="py-5 bg-light">
-    <div class="container">
-      <div class="text-center mb-5">
+<!-- Instructor List -->
+<div id="instructor-list" style="padding:40px;">
+  <div class="text-center mb-5">
         <h2 class="section-sub text-primary">Our Trainers</h2>
         <h6>Meet our dedicated fitness experts, committed to guiding you on your health journey with passion and expertise.</h6>
       </div>
-      <div class="row g-4">
-        <div class="col-md-3">
-          <div class="team-item text-center p-4 rounded">
-            <img src="assets/risen-wang-20jX9b35r_M-unsplash.jpg" alt="" class="img-fluid rounded-circle mb-3 trainer-img">
-            <h5>John Doe</h5>
-            <small>Head Trainer</small>
-            <div class="social mt-3">
-              <a class="btn btn-square btn-warning mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-              <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-twitter"></i></a>
-              <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-        </div>
 
-        <div class="col-md-3">
-          <div class="team-item text-center p-4 rounded">
-            <img src="assets/risen-wang-20jX9b35r_M-unsplash.jpg" alt="" class="img-fluid rounded-circle mb-3 trainer-img">
-            <h5>Jane Smith</h5>
-            <small>Performance Coach</small>
-            <div class="social mt-3">
-              <a class="btn btn-square btn-warning mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-              <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-twitter"></i></a>
-              <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-        </div>
+  <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:25px;">
 
-        <div class="col-md-3">
-          <div class="team-item text-center p-4 rounded">
-            <img src="assets/risen-wang-20jX9b35r_M-unsplash.jpg" alt="" class="img-fluid rounded-circle mb-3 trainer-img">
-            <h5>Sam Wilson</h5>
-            <small>Nutritionist</small>
-            <div class="social mt-3">
-              <a class="btn btn-square btn-warning mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-              <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-twitter"></i></a>
-              <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="team-item text-center p-4 rounded">
-            <img src="assets/risen-wang-20jX9b35r_M-unsplash.jpg" alt="" class="img-fluid rounded-circle mb-3 trainer-img">
-            <h5>Lisa Brown</h5>
-            <small>Yoga Specialist</small>
-            <div class="social mt-3">
-              <a class="btn btn-square btn-warning mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-              <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-twitter"></i></a>
-              <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="team-item text-center p-4 rounded">
-            <img src="assets/risen-wang-20jX9b35r_M-unsplash.jpg" alt="" class="img-fluid rounded-circle mb-3 trainer-img">
-            <h5>Lisa Brown</h5>
-            <small>Yoga Specialist</small>
-            <div class="social mt-3">
-              <a class="btn btn-square btn-warning mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-              <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-twitter"></i></a>
-              <a class="btn btn-square btn-primary mx-1" href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-        </div>
+    <!-- Instructor Card Template -->
+    <div style="background:white; width:260px; padding:20px; text-align:center; border-radius:15px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+      <img src="assets/risen-wang-20jX9b35r_M-unsplash.jpg" alt="Instructor" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
+      <h4>Lisa Brown</h4>
+      <small style="color:#666;">Yoga Specialist</small>
+      <div style="margin-top:10px;">
+        <a href="#" style="display:inline-block; background:#1877f2; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" style="display:inline-block; background:#1da1f2; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-twitter"></i></a>
+        <a href="#" style="display:inline-block; background:#e4405f; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-instagram"></i></a>
       </div>
+      <button onclick="showProfile('lisa')" style="margin-top:15px; background:#00a651; border:none; color:white; padding:8px 15px; border-radius:6px; cursor:pointer;">View Profile</button>
     </div>
-  </section>
+
+    <div style="background:white; width:260px; padding:20px; text-align:center; border-radius:15px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+      <img src="assets/risen-wang-20jX9b35r_M-unsplash.jpg" alt="Instructor" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
+      <h4>David Smith</h4>
+      <small style="color:#666;">Bodybuilding Coach</small>
+      <div style="margin-top:10px;">
+        <a href="#" style="display:inline-block; background:#1877f2; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" style="display:inline-block; background:#1da1f2; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-twitter"></i></a>
+        <a href="#" style="display:inline-block; background:#e4405f; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-instagram"></i></a>
+      </div>
+      <button onclick="showProfile('david')" style="margin-top:15px; background:#00a651; border:none; color:white; padding:8px 15px; border-radius:6px; cursor:pointer;">View Profile</button>
+    </div>
+
+    <div style="background:white; width:260px; padding:20px; text-align:center; border-radius:15px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+      <img src="assets/risen-wang-20jX9b35r_M-unsplash.jpg" alt="Instructor" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
+      <h4>Sarah Lee</h4>
+      <small style="color:#666;">Cardio Trainer</small>
+      <div style="margin-top:10px;">
+        <a href="#" style="display:inline-block; background:#1877f2; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" style="display:inline-block; background:#1da1f2; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-twitter"></i></a>
+        <a href="#" style="display:inline-block; background:#e4405f; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-instagram"></i></a>
+      </div>
+      <button onclick="showProfile('sarah')" style="margin-top:15px; background:#00a651; border:none; color:white; padding:8px 15px; border-radius:6px; cursor:pointer;">View Profile</button>
+    </div>
+
+    <div style="background:white; width:260px; padding:20px; text-align:center; border-radius:15px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+      <img src="assets/risen-wang-20jX9b35r_M-unsplash.jpg" alt="Instructor" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
+      <h4>Michael Khan</h4>
+      <small style="color:#666;">CrossFit Expert</small>
+      <div style="margin-top:10px;">
+        <a href="#" style="display:inline-block; background:#1877f2; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" style="display:inline-block; background:#1da1f2; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-twitter"></i></a>
+        <a href="#" style="display:inline-block; background:#e4405f; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-instagram"></i></a>
+      </div>
+      <button onclick="showProfile('michael')" style="margin-top:15px; background:#00a651; border:none; color:white; padding:8px 15px; border-radius:6px; cursor:pointer;">View Profile</button>
+    </div>
+
+    <div style="background:white; width:260px; padding:20px; text-align:center; border-radius:15px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+      <img src="assets/risen-wang-20jX9b35r_M-unsplash.jpg" alt="Instructor" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
+      <h4>Emma Watson</h4>
+      <small style="color:#666;">Nutrition Coach</small>
+      <div style="margin-top:10px;">
+        <a href="#" style="display:inline-block; background:#1877f2; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" style="display:inline-block; background:#1da1f2; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-twitter"></i></a>
+        <a href="#" style="display:inline-block; background:#e4405f; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-instagram"></i></a>
+      </div>
+      <button onclick="showProfile('emma')" style="margin-top:15px; background:#00a651; border:none; color:white; padding:8px 15px; border-radius:6px; cursor:pointer;">View Profile</button>
+    </div>
+  </div>
+</div>
+
+<!-- Profile Page -->
+<div id="profile-page" style="display:none; padding:40px 60px; font-family:sans-serif;">
+  <button onclick="goBack()" style="background:#00a651; color:white; border:none; padding:8px 15px; border-radius:5px; cursor:pointer;">← Back</button>
+  
+  <div style="display:flex; margin-top:30px; gap:40px; flex-wrap:wrap;">
+    <!-- Profile Image -->
+    <img id="p-img" src="" style="width:180px; height:180px; border-radius:50%; object-fit:cover; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+    
+    <!-- Stats Card -->
+    <div style="background:white; padding:20px; width:220px; height:150px; box-shadow:0 2px 5px rgba(0,0,0,0.1); border-radius:10px; display:flex; flex-direction:column; justify-content:space-between;">
+      <p style="margin:0; font-size:18px;"><b id="p-learners">0</b><br><span style="font-size:13px;">লার্নার</span></p>
+      <p style="margin:0; font-size:18px;"><b id="p-batch">0</b><br><span style="font-size:13px;">ব্যাচ পরিচালনা</span></p>
+      <p style="margin:0; font-size:18px;"><b id="p-course">0</b><br><span style="font-size:13px;">চলমান কোর্স</span></p>
+    </div>
+    
+    <!-- Profile Details -->
+    <div style="flex:1; min-width:300px;">
+      <h2 id="p-name" style="margin-bottom:5px;"></h2>
+      <p id="p-role" style="font-size:16px; color:#555; margin-top:0;"></p>
+      
+      <h4>About:</h4>
+      <p id="p-about" style="color:#444; line-height:1.5;"></p>
+      
+      <h4>Experience:</h4>
+      <p id="p-exp1" style="margin:2px 0;"></p>
+      <p id="p-exp2" style="margin:2px 0;"></p>
+      
+      <h4>Certifications:</h4>
+      <p id="p-cert" style="margin:2px 0;"></p>
+      
+      <h4>Specialties:</h4>
+      <p id="p-specialties" style="margin:2px 0;"></p>
+      
+      <h4>Quote:</h4>
+      <p id="p-quote" style="font-style:italic; color:#c93612; margin:2px 0;"></p>
+    </div>
+  </div>
+</div>
 
 
-   <!-- ===== FOOTER SECTION ===== -->
+
+
+
+
+
+
+ <!-- Chating System -->
+
+<!-- Floating Chat Buttons -->
+<div style="position:fixed; right:20px; bottom:20px; display:flex; flex-direction:column; gap:10px; z-index:999;">
+    <button onclick="openChat()" style="width:50px;height:50px;border-radius:50%;background:#00C853;border:none;cursor:pointer;font-size:22px;color:white;">💬</button>
+    <!--button onclick="openChat()" style="width:50px;height:50px;border-radius:50%;background:#25D366;border:none;cursor:pointer;font-size:22px;color:white;">☎</button -->
+</div>
+
+<!-- Chat Popup Box Start -->
+<!-- Floating AI Chat Button -->
+
+<!--div style="position:fixed; right:20px; bottom:20px; z-index:999;">
+    <button onclick="openChat()" style="width:55px;height:55px;border-radius:50%;background:#9e080a;border:none;cursor:pointer;font-size:24px;color:white;">
+        🤖
+    </button>
+</div -->
+
+<!-- Chat Popup -->
+<div id="chatBox" style="display:none; position:fixed; bottom:90px; right:20px; width:320px; background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.2); z-index:1000;">
+    <div style="background:#a40815;color:white;padding:12px;border-radius:10px 10px 0 0; display:flex; justify-content:space-between; align-items:center;">
+        <h3 style="margin:0;font-size:18px;">AI Assistant</h3>
+        <button onclick="closeChat()" style="background:none;border:none;font-size:18px;color:white;cursor:pointer;">✖</button>
+    </div>
+    <div id="chatMessages" style="height:250px; overflow-y:auto; padding:10px; font-size:14px;">
+        <div style="background:#eee; padding:8px; border-radius:5px; margin-bottom:10px; max-width:80%;">
+            👋 Hello! How can I help you today?
+        </div>
+    </div>
+    <div style="padding:10px; display:flex; gap:5px;">
+        <input id="userInput" type="text" placeholder="Type your message..." style="flex:1;padding:8px;border:1px solid #ccc;border-radius:5px;">
+        <button onclick="sendMessage()" style="padding:8px 12px;background:#970818;color:white;border:none;border-radius:5px;cursor:pointer;">Send</button>
+    </div>
+</div>
+
+<!-- ===== FOOTER SECTION ===== -->
   <footer id="contact" class="bg-dark text-light pt-5">
     <div class="container">
       <div class="row gy-4">
@@ -205,3 +280,159 @@
       </div>
     </div>
   </footer>
+
+  <!-- Toast Notification (for alerts/messages) -->
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <!-- Simple JS for page toggle -->
+   <script src="script.js"></script>
+  <!-- Script -->
+
+<!-- Script -->
+<!-- Script -->
+<script>
+const instructors = {
+  lisa: {
+    name: "Lisa Brown",
+    role: "Yoga Specialist",
+    about: "Lisa Brown is a certified yoga specialist with over 5 years of experience in teaching mindfulness, balance, and flexibility. She focuses on personalized yoga routines that help improve both physical and mental well-being.",
+    experience: [
+      "Trainer at FitGym",
+      "Instructor at Wellness Studio"
+    ],
+    certifications: [
+      "Certified Yoga Trainer",
+      "CPR and First Aid Certified"
+    ],
+    specialties: [
+      "Mindfulness & Meditation",
+      "Flexibility & Balance",
+      "Personalized Yoga Plans"
+    ],
+    quote: "Breathe, stretch, and find your inner peace.",
+    learners: "1,787",
+    batch: "5",
+    course: "2"
+  },
+  david: {
+    name: "David Smith",
+    role: "Bodybuilding Coach",
+    about: "David Smith is a professional bodybuilding and strength training coach with more than 8 years of experience. He has trained athletes and fitness enthusiasts to achieve their peak performance through structured routines and nutrition plans.",
+    experience: [
+      "Coach at PowerGym",
+      "Trainer at FitPro"
+    ],
+    certifications: [
+      "Certified Strength & Conditioning Specialist (CSCS)",
+      "CPR and First Aid Certified"
+    ],
+    specialties: [
+      "Muscle Building & Strength Training",
+      "Nutrition Planning",
+      "Athletic Performance"
+    ],
+    quote: "Strength doesn’t come from what you can do, it comes from overcoming the things you once thought you couldn’t.",
+    learners: "2,100",
+    batch: "8",
+    course: "4"
+  },
+  sarah: {
+    name: "Sarah Lee",
+    role: "Cardio Trainer",
+    about: "Sarah Lee is a certified cardio fitness trainer with over 7 years of professional experience helping clients improve endurance, heart health, and overall fitness. Her sessions are known for their high energy, motivational coaching, and personalized workout plans designed to meet individual goals.",
+    experience: [
+      "Senior Cardio Coach – PulseFit Gym, Los Angeles (2019–Present)",
+      "Fitness Consultant – MoveWell Fitness Center (2016–2019)"
+    ],
+    certifications: [
+      "ACE Certified Personal Trainer",
+      "CPR and First Aid Certified"
+    ],
+    specialties: [
+      "HIIT & Aerobic Workouts",
+      "Endurance Training",
+      "Functional Fitness",
+      "Personalized Cardio Plans"
+    ],
+    quote: "Push your limits — your heart will thank you later.",
+    learners: "1,540",
+    batch: "6",
+    course: "3"
+  },
+  michael: {
+    name: "Michael Khan",
+    role: "CrossFit Expert",
+    about: "Michael Khan is a high-intensity CrossFit expert specializing in endurance, strength, and agility training. With 6 years of experience, he helps clients push limits and achieve maximum physical performance safely and effectively.",
+    experience: [
+      "CrossFit Coach at HIITZone",
+      "Fitness Mentor at GoFit"
+    ],
+    certifications: [
+      "CrossFit Level 2 Trainer",
+      "CPR and First Aid Certified"
+    ],
+    specialties: [
+      "High-Intensity Interval Training",
+      "Agility & Strength",
+      "Functional Fitness"
+    ],
+    quote: "Challenge yourself every day, and the results will follow.",
+    learners: "1,203",
+    batch: "4",
+    course: "1"
+  },
+  emma: {
+    name: "Emma Watson",
+    role: "Nutrition Coach",
+    about: "Emma Watson is a certified nutrition and wellness coach with 9 years of experience in creating personalized diet plans. She focuses on sustainable eating habits that complement workout goals and long-term health improvements.",
+    experience: [
+      "Diet Consultant at NutriLife",
+      "Trainer at FitWell"
+    ],
+    certifications: [
+      "Certified Nutrition Specialist (CNS)",
+      "CPR and First Aid Certified"
+    ],
+    specialties: [
+      "Personalized Diet Planning",
+      "Weight Management",
+      "Wellness Coaching"
+    ],
+    quote: "Eat well, feel well, live well.",
+    learners: "1,875",
+    batch: "5",
+    course: "2"
+  }
+};
+
+// ===== Function to Show Instructor Profile =====
+function showProfile(key) {
+  const p = instructors[key];
+  document.getElementById("instructor-list").style.display = "none";
+  document.getElementById("profile-page").style.display = "block";
+  document.getElementById("p-img").src = "assets/risen-wang-20jX9b35r_M-unsplash.jpg";
+  document.getElementById("p-name").textContent = p.name;
+  document.getElementById("p-role").textContent = p.role;
+  document.getElementById("p-about").textContent = p.about;
+  
+  // Update experience, certifications, specialties, and quote
+  document.getElementById("p-exp1").textContent = p.experience[0];
+  document.getElementById("p-exp2").textContent = p.experience[1];
+  document.getElementById("p-cert").textContent = p.certifications.join(", ");
+  document.getElementById("p-specialties").textContent = p.specialties.join(", ");
+  document.getElementById("p-quote").textContent = p.quote;
+  
+  document.getElementById("p-learners").textContent = p.learners;
+  document.getElementById("p-batch").textContent = p.batch;
+  document.getElementById("p-course").textContent = p.course;
+}
+
+// ===== Back Button Function =====
+function goBack() {
+  document.getElementById("instructor-list").style.display = "block";
+  document.getElementById("profile-page").style.display = "none";
+}
+</script>
+
+
+</body>
+</html>
