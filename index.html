@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,25 +23,27 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<!-- ===== HEADER SECTION ===== -->
-  <header style="margin:0; font-family:Arial, Helvetica, sans-serif; color:#fff; background:#000;">
-    <nav class="nav container" style="display:flex; align-items:center; justify-content:space-between; padding:0 20px;">
-      
-      <!-- Logo -->
-      <a class="navbar-brand d-flex align-items-center" href="#" style="color:white; text-decoration:none; display:flex; align-items:center;">
-        <i class="fa-solid fa-person-walking-dashed-line-arrow-right fa-lg text-warning" style="margin-right:8px;"></i>
-        <span class="fs-4 text-warning">FitTrack+</span>
-      </a>
+<body> 
 
-      <!-- Navigation Links -->
+  <!-- ===== HEADER SECTION ===== -->
+ <header class="site-header" style="background-color: black; color: white; padding: 10px 0;">
+  <nav class="nav container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 20px;">
+    
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center" href="#" style="color: white; text-decoration: none; display: flex; align-items: center;">
+      <i class="fa-solid fa-person-walking-dashed-line-arrow-right fa-lg text-warning" style="margin-right: 8px;"></i>
+      <span class="fs-4 text-warning">FitTrack+</span>
+    </a>
+
+    <!-- Navigation Links -->
       <ul class="nav-links" style="list-style:none; display:flex; align-items:center; margin:0; padding:0;">
         <li style="margin-right:15px;"><a href="index.html" style="color:white; text-decoration:none;">Home</a></li>
         <li style="margin-right:15px;"><a href="#plans" style="color:white; text-decoration:none;">Services</a></li>
         <li style="margin-right:15px;"><a href="class.html" style="color:white; text-decoration:none;">Class</a></li>
-        <li style="margin-right:15px;"><a href="#community" style="color:white; text-decoration:none;">Community</a></li>
+        <li style="margin-right:15px;"><a href="community.html" style="color:white; text-decoration:none;">Community</a></li>
         <li style="margin-right:15px;"><a href="blog.html" style="color:white; text-decoration:none;">Trainer</a></li>
 
-        <!-- Login Dropdown -->
+      <!-- Login Dropdown -->
       <li style="position: relative; margin-right: 10px;">
         <a href="javascript:void(0)" id="loginBtn" style="color: white; text-decoration: none;">Login ▾</a>
         <div id="loginDropdown" style="display: none; position: absolute; right: 0; top: 25px; background-color: #222; border-radius: 4px; overflow: hidden;">
@@ -49,126 +52,157 @@
         </div>
       </li>
 
+      <!-- Register Link -->
+      <li>
+        <a href="javascript:void(0)" id="registerBtn" style="color: #ffc107; text-decoration: none;">Register</a>
+      </li>
+    </ul>
+  </nav>
 
-        <!-- Register Link -->
-        <li>
-          <a href="javascript:void(0)" id="registerBtn" style="color:#ffc107; text-decoration:none;">Register</a>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Login Modal -->
-    <div id="loginModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center;">
-      <div style="background:white; width:350px; border-radius:8px; padding:20px; text-align:center; color:#333;">
-        <h2 id="loginTitle">Login to your account</h2>
-        <p style="font-size:14px;">Don’t have an account? <a href="#" style="color:#0d6efd;">Sign up here</a></p>
-        <button style="width:100%; margin:8px 0; padding:10px; border:1px solid #ddd; border-radius:4px; background:white; cursor:pointer;">
-          <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" width="18" style="vertical-align:middle; margin-right:8px;"> Login with Google
-        </button>
-        <button style="width:100%; margin:8px 0; padding:10px; border:1px solid #ddd; border-radius:4px; background:white; cursor:pointer;">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" width="18" style="vertical-align:middle; margin-right:8px;"> Login with Twitter
-        </button>
-        <hr>
-        <div style="text-align:left;">
-          <label>Email address</label>
-          <input type="email" placeholder="you@example.com" style="width:100%; padding:8px; margin:5px 0; border:1px solid #ccc; border-radius:4px;">
-          <label>Password</label>
-          <input type="password" placeholder="******" style="width:100%; padding:8px; margin:5px 0; border:1px solid #ccc; border-radius:4px;">
-        </div>
-        <button style="width:100%; margin-top:10px; padding:10px; background:#0d6efd; color:white; border:none; border-radius:4px; cursor:pointer;">Login</button>
-        <button onclick="closeModal()" style="margin-top:10px; background:none; border:none; color:#555; cursor:pointer;">Close</button>
+  <!-- Login Modal -->
+  <div id="loginModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center;">
+    <div style="background:white; width:350px; border-radius:8px; padding:20px; text-align:center; color:#333;">
+      <h2 id="loginTitle">Login to your account</h2>
+      <p style="font-size: 14px;">Don’t have an account? <a href="#" style="color:#0d6efd;">Sign up here</a></p>
+      <button style="width:100%; margin:8px 0; padding:10px; border:1px solid #ddd; border-radius:4px; background:white; cursor:pointer;">
+        <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" width="18" style="vertical-align:middle; margin-right:8px;"> Login with Google
+      </button>
+      <button style="width:100%; margin:8px 0; padding:10px; border:1px solid #ddd; border-radius:4px; background:white; cursor:pointer;">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" width="18" style="vertical-align:middle; margin-right:8px;"> Login with Twitter
+      </button>
+      <hr>
+      <div style="text-align:left;">
+        <label>Email address</label>
+        <input type="email" placeholder="you@example.com" style="width:100%; padding:8px; margin:5px 0; border:1px solid #ccc; border-radius:4px;">
+        <label>Password</label>
+        <input type="password" placeholder="******" style="width:100%; padding:8px; margin:5px 0; border:1px solid #ccc; border-radius:4px;">
       </div>
+      <button style="width:100%; margin-top:10px; padding:10px; background:#0d6efd; color:white; border:none; border-radius:4px; cursor:pointer;">Login</button>
+      <button onclick="closeModal()" style="margin-top:10px; background:none; border:none; color:#555; cursor:pointer;">Close</button>
     </div>
-  </header>
+  </div>
 
-  <!-- ===== MAIN CONTENT ===== -->
-  <main>
+</header>
 
-    <!-- === HERO SECTION === -->
-    <section id="home" class="hero text-white"
-      style="position:relative; height:100vh; width:100%;
-             background:url('assets/danielle-cerullo-CQfNt66ttZM-unsplash.jpg') center center/cover no-repeat;
-             display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden;">
+<!-- Instructor List -->
+<div id="instructor-list" style="padding:40px;">
+  <div class="text-center mb-5">
+        <h2 class="section-sub text-primary">Our Trainers</h2>
+        <h6>Meet our dedicated fitness experts, committed to guiding you on your health journey with passion and expertise.</h6>
+      </div>
+
+  <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:25px;">
+
+    <!-- Instructor Card Template -->
+    <div style="background:white; width:260px; padding:20px; text-align:center; border-radius:15px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+      <img src="assets/risen-wang-20jX9b35r_M-unsplash.jpg" alt="Instructor" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
+      <h4>Lisa Brown</h4>
+      <small style="color:#666;">Yoga Specialist</small>
+      <div style="margin-top:10px;">
+        <a href="#" style="display:inline-block; background:#1877f2; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" style="display:inline-block; background:#1da1f2; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-twitter"></i></a>
+        <a href="#" style="display:inline-block; background:#e4405f; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-instagram"></i></a>
+      </div>
+      <button onclick="showProfile('lisa')" style="margin-top:15px; background:#00a651; border:none; color:white; padding:8px 15px; border-radius:6px; cursor:pointer;">View Profile</button>
+    </div>
+
+    <div style="background:white; width:260px; padding:20px; text-align:center; border-radius:15px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+      <img src="assets/risen-wang-20jX9b35r_M-unsplash.jpg" alt="Instructor" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
+      <h4>David Smith</h4>
+      <small style="color:#666;">Bodybuilding Coach</small>
+      <div style="margin-top:10px;">
+        <a href="#" style="display:inline-block; background:#1877f2; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" style="display:inline-block; background:#1da1f2; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-twitter"></i></a>
+        <a href="#" style="display:inline-block; background:#e4405f; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-instagram"></i></a>
+      </div>
+      <button onclick="showProfile('david')" style="margin-top:15px; background:#00a651; border:none; color:white; padding:8px 15px; border-radius:6px; cursor:pointer;">View Profile</button>
+    </div>
+
+    <div style="background:white; width:260px; padding:20px; text-align:center; border-radius:15px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+      <img src="assets/risen-wang-20jX9b35r_M-unsplash.jpg" alt="Instructor" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
+      <h4>Sarah Lee</h4>
+      <small style="color:#666;">Cardio Trainer</small>
+      <div style="margin-top:10px;">
+        <a href="#" style="display:inline-block; background:#1877f2; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" style="display:inline-block; background:#1da1f2; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-twitter"></i></a>
+        <a href="#" style="display:inline-block; background:#e4405f; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-instagram"></i></a>
+      </div>
+      <button onclick="showProfile('sarah')" style="margin-top:15px; background:#00a651; border:none; color:white; padding:8px 15px; border-radius:6px; cursor:pointer;">View Profile</button>
+    </div>
+
+    <div style="background:white; width:260px; padding:20px; text-align:center; border-radius:15px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+      <img src="assets/risen-wang-20jX9b35r_M-unsplash.jpg" alt="Instructor" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
+      <h4>Michael Khan</h4>
+      <small style="color:#666;">CrossFit Expert</small>
+      <div style="margin-top:10px;">
+        <a href="#" style="display:inline-block; background:#1877f2; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" style="display:inline-block; background:#1da1f2; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-twitter"></i></a>
+        <a href="#" style="display:inline-block; background:#e4405f; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-instagram"></i></a>
+      </div>
+      <button onclick="showProfile('michael')" style="margin-top:15px; background:#00a651; border:none; color:white; padding:8px 15px; border-radius:6px; cursor:pointer;">View Profile</button>
+    </div>
+
+    <div style="background:white; width:260px; padding:20px; text-align:center; border-radius:15px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+      <img src="assets/risen-wang-20jX9b35r_M-unsplash.jpg" alt="Instructor" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
+      <h4>Emma Watson</h4>
+      <small style="color:#666;">Nutrition Coach</small>
+      <div style="margin-top:10px;">
+        <a href="#" style="display:inline-block; background:#1877f2; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" style="display:inline-block; background:#1da1f2; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-twitter"></i></a>
+        <a href="#" style="display:inline-block; background:#e4405f; color:white; border-radius:50%; width:30px; height:30px; line-height:30px; margin:3px;"><i class="fab fa-instagram"></i></a>
+      </div>
+      <button onclick="showProfile('emma')" style="margin-top:15px; background:#00a651; border:none; color:white; padding:8px 15px; border-radius:6px; cursor:pointer;">View Profile</button>
+    </div>
+  </div>
+</div>
+
+<!-- Profile Page -->
+<div id="profile-page" style="display:none; padding:40px 60px; font-family:sans-serif;">
+  <button onclick="goBack()" style="background:#00a651; color:white; border:none; padding:8px 15px; border-radius:5px; cursor:pointer;">← Back</button>
+  
+  <div style="display:flex; margin-top:30px; gap:40px; flex-wrap:wrap;">
+    <!-- Profile Image -->
+    <img id="p-img" src="" style="width:180px; height:180px; border-radius:50%; object-fit:cover; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+    
+    <!-- Stats Card -->
+    <div style="background:white; padding:20px; width:220px; height:150px; box-shadow:0 2px 5px rgba(0,0,0,0.1); border-radius:10px; display:flex; flex-direction:column; justify-content:space-between;">
+      <p style="margin:0; font-size:18px;"><b id="p-learners">0</b><br><span style="font-size:13px;">লার্নার</span></p>
+      <p style="margin:0; font-size:18px;"><b id="p-batch">0</b><br><span style="font-size:13px;">ব্যাচ পরিচালনা</span></p>
+      <p style="margin:0; font-size:18px;"><b id="p-course">0</b><br><span style="font-size:13px;">চলমান কোর্স</span></p>
+    </div>
+    
+    <!-- Profile Details -->
+    <div style="flex:1; min-width:300px;">
+      <h2 id="p-name" style="margin-bottom:5px;"></h2>
+      <p id="p-role" style="font-size:16px; color:#555; margin-top:0;"></p>
       
-      <!-- Overlay -->
-      <div style="position:absolute; inset:0; background:rgba(0,0,0,0.55);"></div>
-
-      <div class="container hero-inner" style="position:relative; z-index:2;">
-        <!-- Hero Text -->
-        <div class="hero-copy" style="max-width:800px; margin:auto;">
-          <h1 style="font-size:48px; font-weight:800; margin-bottom:20px;">Train smarter. Track progress. Join the community.</h1>
-          <p style="font-size:16px; color:#ddd; line-height:1.6; margin-bottom:30px;">
-            Empower your fitness journey with FitScheduler. Connect with expert trainers, book personalized sessions, 
-            and join a vibrant community dedicated to health and wellness. Your path to a healthier, more active lifestyle starts here.
-          </p>
-
-          <!-- Call-to-Action Buttons -->
-          <div class="cta-row" style="display:flex; justify-content:center; gap:15px;">
-            <a href="#plans" class="btn" style="background:#ff7f2a; color:white; padding:12px 30px; border-radius:6px; text-decoration:none; font-weight:bold;">Classes</a>
-            <a href="#community" class="btn" style="border:2px solid #ff7f2a; color:#ff7f2a; padding:10px 28px; border-radius:6px; text-decoration:none; font-weight:bold;">Trainers</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bottom Orange Stats Bar -->
-      <div style="position:absolute; bottom:0; width:100%; background:rgba(255,127,42,0.9); display:flex; justify-content:center; gap:80px; padding:18px 0;">
-        <div style="text-align:center;">
-          <h2 style="margin:0; font-size:26px;">10K+</h2>
-          <p style="margin:5px 0 0; font-size:14px;">Active Members</p>
-        </div>
-        <div style="text-align:center;">
-          <h2 style="margin:0; font-size:26px;">50+</h2>
-          <p style="margin:5px 0 0; font-size:14px;">Expert Trainers</p>
-        </div>
-        <div style="text-align:center;">
-          <h2 style="margin:0; font-size:26px;">24/7</h2>
-          <p style="margin:5px 0 0; font-size:14px;">Access Available</p>
-        </div>
-      </div>
-    </section>
-
-<!-- SERVICES -->
-  <section id="services" class="py-5">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h5 class="section-sub">Our Services</h5>
-        <h2 class="section-title">What we offer</h2>
-      </div>
-      <div class="row g-4">
-        <div class="col-md-3 col-sm-6">
-          <div class="service-item p-4 text-center">
-            <i class="fas fa-user-tie fa-3x text-primary mb-3"></i>
-            <h5>Personal Coaches</h5>
-            <p class="small">Certified trainers with personalized plans.</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="service-item p-4 text-center">
-            <i class="fas fa-dumbbell fa-3x text-primary mb-3"></i>
-            <h5>Workout Plans</h5>
-            <p class="small">Structured plans for all levels.</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="service-item p-4 text-center">
-            <i class="fas fa-heartbeat fa-3x text-primary mb-3"></i>
-            <h5>Health Tracking</h5>
-            <p class="small">Track steps, calories and progress.</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="service-item p-4 text-center">
-            <i class="fas fa-video fa-3x text-primary mb-3"></i>
-            <h5>Online Classes</h5>
-            <p class="small">Live & on-demand classes.</p>
-          </div>
-        </div>
-      </div>
+      <h4>About:</h4>
+      <p id="p-about" style="color:#444; line-height:1.5;"></p>
+      
+      <h4>Experience:</h4>
+      <p id="p-exp1" style="margin:2px 0;"></p>
+      <p id="p-exp2" style="margin:2px 0;"></p>
+      
+      <h4>Certifications:</h4>
+      <p id="p-cert" style="margin:2px 0;"></p>
+      
+      <h4>Specialties:</h4>
+      <p id="p-specialties" style="margin:2px 0;"></p>
+      
+      <h4>Quote:</h4>
+      <p id="p-quote" style="font-style:italic; color:#c93612; margin:2px 0;"></p>
     </div>
-  </section>
+  </div>
+</div>
 
 
-  <!-- Chating System -->
+
+
+
+
+
+
+ <!-- Chating System -->
 
 <!-- Floating Chat Buttons -->
 <div style="position:fixed; right:20px; bottom:20px; display:flex; flex-direction:column; gap:10px; z-index:999;">
@@ -202,216 +236,7 @@
     </div>
 </div>
 
-  <!-- Chating System End -->
-
-
-    <!-- === APP FEATURES SECTION === -->
-    <section id="features" class="container section">
-      <h2 class="section-title">App Features</h2>
-      <p class="section-sub">Designed for Trainers & Customers — practical tools, minimal interface.</p>
-
-      <!-- Feature Cards -->
-      <div class="features-grid">
-        <article class="feature-card">
-          <h3>Workout Plans</h3>
-          <p>Create, assign, and follow structured workout plans with sets, reps, and notes.</p>
-          <a class="small-link" href="#plans">View Plans →</a>
-        </article>
-        <article class="feature-card">
-          <h3>Progress Tracking</h3>
-          <p>Track weight, strength, and milestones. Visualize progress and keep logs.</p>
-          <a class="small-link" href="#progress">Check Progress →</a>
-        </article>
-        <article class="feature-card">
-          <h3>Community Support</h3>
-          <p>Post, like, and comment. Share wins and ask for help in a supportive feed.</p>
-          <a class="small-link" href="#community">Join Community →</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- === ADDITIONAL FEATURES SECTION === -->
-    <section id="features" class="features">
-      <div class="container">
-        <h2>Features</h2>
-        <div class="features-grid">
-          <article class="feature-card">
-            <h3>Trainer Dashboard</h3>
-            <p>Create programs, track clients, and schedule sessions.</p>
-          </article>
-          <article class="feature-card">
-            <h3>Client Progress</h3>
-            <p>Log workouts, measure progress, and receive trainer feedback.</p>
-          </article>
-          <article class="feature-card">
-            <h3>Plans & Payments</h3>
-            <p>Showcase subscription plans and manage enrollments (mock).</p>
-          </article>
-          <article class="feature-card">
-            <h3>Responsive</h3>
-            <p>Designed mobile-first and minimal to showcase your UI skills.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- === GALLERY SECTION === -->
-    <section id="gallery" class="gallery" style="padding: 40px 0; background-color: #f5f5f5;">
-      <div class="container">
-        <h2 style="text-align:center; margin-bottom: 20px;">Gallery</h2>
-        <!-- Display Image Grid -->
-        <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
-          <div class="gallery-item"><img src="assets/danielle-cerullo-CQfNt66ttZM-unsplash.jpg" alt="Gallery Image 1" style="width: 100%; border-radius: 8px;"></div>
-          <div class="gallery-item"><img src="assets/risen-wang-20jX9b35r_M-unsplash.jpg" alt="Gallery Image 2" style="width: 100%; border-radius: 8px;"></div>
-          <div class="gallery-item"><img src="assets/victor-freitas-WvDYdXDzkhs-unsplash.jpg" alt="Gallery Image 3" style="width: 100%; border-radius: 8px;"></div>
-          <div class="gallery-item"><img src="assets/victor-freitas-Yuv-iwByVRQ-unsplash.jpg" alt="Gallery Image 4" style="width: 100%; border-radius: 8px;"></div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- === WORKOUT PLANS SECTION === -->
-    <section id="plans" class="container section">
-      <h2 class="section-title">Workout Plans</h2>
-      <div class="plans-grid">
-        <!-- First Plan Card -->
-        <div class="plan-card">
-          <h3>Beginner Full-Body</h3>
-          <p>3 days/week • 6 weeks</p>
-          <ul>
-            <li>Squat 3x8</li>
-            <li>Push-up 3x10</li>
-            <li>Plank 3 x 30s</li>
-          </ul>
-          <div class="card-actions">
-            <!-- Buttons with JS actions -->
-            <button class="btn btn-outline btn-sm" data-action="save-plan" data-plan="Beginner Full-Body">Save</button>
-            <button class="btn btn-primary btn-sm" data-action="start-plan" data-plan="Beginner Full-Body">Start</button>
-          </div>
-        </div>
-
-        <!-- Second Plan Card -->
-        <div class="plan-card">
-          <h3>Strength Builder</h3>
-          <p>4 days/week • 8 weeks</p>
-          <ul>
-            <li>Deadlift 4x6</li>
-            <li>Bench 4x6</li>
-            <li>Rows 4x8</li>
-          </ul>
-          <div class="card-actions">
-            <button class="btn btn-outline btn-sm" data-action="save-plan" data-plan="Strength Builder">Save</button>
-            <button class="btn btn-primary btn-sm" data-action="start-plan" data-plan="Strength Builder">Start</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- === PROGRESS TRACKING SECTION === -->
-    <section id="progress" class="container section">
-      <h2 class="section-title">Progress Tracking</h2>
-      <p>Log your weight and reps — data stored locally in your browser.</p>
-
-      <!-- Progress Input Form -->
-      <form id="progressForm" class="progress-form" aria-label="Progress form">
-        <label>Weight (kg)<input type="number" id="weight" min="1" /></label>
-        <label>Note<input type="text" id="note" placeholder="e.g., 5x5 bench" /></label>
-        <button type="submit" class="btn btn-primary">Log Progress</button>
-      </form>
-
-      <!-- Progress Display Area -->
-      <div id="progressList" class="progress-list" aria-live="polite"></div>
-    </section>
-
-    <!-- === COMMUNITY SECTION === -->
-    <section id="community" class="container section">
-      <h2 class="section-title">Community</h2>
-      <p>Share quick posts with the community (stored locally).</p>
-
-      <!-- Post Input Form -->
-      <form id="postForm" class="post-form">
-        <textarea id="postInput" placeholder="Share a win, question, or update..." maxlength="300"></textarea>
-        <div class="post-actions">
-          <button type="submit" class="btn btn-primary">Post</button>
-        </div>
-      </form>
-
-      <!-- Display User Posts -->
-      <div id="feed" class="feed"></div>
-    </section>
-
-    <!-- === ABOUT SECTION === -->
-   <!-- <section id="about" class="container section">
-      <h2 class="section-title">About FitFlow</h2>
-      <p>FitFlow is a minimal front-end fitness app demo demonstrating JS interactivity for trainers and customers — perfect for portfolios or small projects.</p>
-   </section>
-     --> 
-<!-- ABOUT -->
-  <section id="about" class="py-5 bg-light">
-    <div class="container">
-      <div class="row g-4 align-items-center">
-        <div class="col-lg-6">
-          <div class="row g-3">
-            <div class="col-6"><img src="assets/danielle-cerullo-CQfNt66ttZM-unsplash.jpg" class="img-fluid rounded" alt=""></div>
-            <div class="col-6"><img src="assets/danielle-cerullo-CQfNt66ttZM-unsplash.jpg" class="img-fluid rounded" alt=""></div>
-            <div class="col-6"><img src="assets/danielle-cerullo-CQfNt66ttZM-unsplash.jpg" class="img-fluid rounded" alt=""></div>
-            <div class="col-6"><img src="assets/danielle-cerullo-CQfNt66ttZM-unsplash.jpg" class="img-fluid rounded" alt=""></div>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <h5 class="section-sub text-primary">About Us</h5>
-          <h2>Welcome to FitTrack+</h2>
-          <p>At FitScheduler, we are dedicated to empowering your fitness journey. Our expert trainers, personalized programs, and supportive community are here to help you achieve your health and wellness goals. Whether you’re just starting out or looking to elevate your training, we provide the tools and guidance you need to succeed.</p>
-          <div class="row g-3 mt-3">
-            <div class="col-6">
-              <div class="stat">
-                <h3 class="mb-0 text-primary">15</h3>
-                <small>Years Experience</small>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="stat">
-                <h3 class="mb-0 text-primary">50+</h3>
-                <small>Trainers</small>
-              </div>
-            </div>
-          </div>
-          <a href="#register" class="btn btn-primary mt-4">Read More</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  </main>
-<!--  
-  <footer class="site-footer" style="background-color: #00c896; padding: 20px 0;">
-    <div class="container footer-inner">
-      <p>© <span id="year">2025</span> FitFlow — Built with care.</p>
-      <nav class="footer-nav">
-        <a href="#privacy">Privacy</a>
-        <a href="#terms">Terms</a>
-      </nav>
-    </div>
-  </footer> -->
- 
-<!---->
-
-
-
-  <!-- Video Modal -->
-  <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content bg-black border-0">
-        <div class="modal-body p-0">
-          <div class="ratio ratio-16x9">
-            <iframe id="videoFrame" src="" title="Video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
- <!-- ===== FOOTER SECTION ===== -->
+<!-- ===== FOOTER SECTION ===== -->
   <footer id="contact" class="bg-dark text-light pt-5">
     <div class="container">
       <div class="row gy-4">
@@ -456,53 +281,158 @@
     </div>
   </footer>
 
-  <!-- ===== TRAINER LOGIN MODAL ===== -->
-  <div class="modal" id="trainerModal" aria-hidden="true" role="dialog" aria-labelledby="trainerModalLabel">
-    <div class="modal-content">
-      <!-- Close Modal Button -->
-      <button class="modal-close" data-close>&times;</button>
-      <h3 id="trainerModalLabel">Trainer Login</h3>
-
-      <!-- Trainer Login Form -->
-      <form id="trainerForm">
-        <label>Email<input type="email" id="trainerEmail" required /></label>
-        <label>Password<input type="password" id="trainerPassword" minlength="4" required /></label>
-        <label><input type="checkbox" id="trainerRemember" /> Remember me</label>
-        <div class="modal-actions">
-          <button type="submit" class="btn btn-primary">Login</button>
-        </div>
-      </form>
-
-      <!-- Demo Login Info -->
-      <div class="modal-note">Demo credentials: trainer@fitflow.test / trainer123</div>
-    </div>
-  </div>
-
-  <!-- ===== CUSTOMER LOGIN MODAL ===== -->
-  <div class="modal" id="customerModal" aria-hidden="true" role="dialog" aria-labelledby="customerModalLabel">
-    <div class="modal-content">
-      <button class="modal-close" data-close>&times;</button>
-      <h3 id="customerModalLabel">Customer Login</h3>
-
-      <!-- Customer Login Form -->
-      <form id="customerForm">
-        <label>Email<input type="email" id="customerEmail" required /></label>
-        <label>Password<input type="password" id="customerPassword" minlength="4" required /></label>
-        <!-- Login Submit Button -->
-        <div class="modal-actions">
-          <button type="submit" class="btn btn-primary">Login</button>
-        </div>
-      </form>
-
-      <!-- Demo Login Info -->
-      <div class="modal-note">Demo credentials: customer@fitflow.test / customer123</div>
-    </div>
-  </div>
-
   <!-- Toast Notification (for alerts/messages) -->
   <div id="toast" class="toast" aria-live="polite"></div>
+  <!-- Simple JS for page toggle -->
+   <script src="script.js"></script>
+  <!-- Script -->
 
-  <!-- External JavaScript File -->
-  <script src="script.js"></script>
+<!-- Script -->
+<!-- Script -->
+<script>
+const instructors = {
+  lisa: {
+    name: "Lisa Brown",
+    role: "Yoga Specialist",
+    about: "Lisa Brown is a certified yoga specialist with over 5 years of experience in teaching mindfulness, balance, and flexibility. She focuses on personalized yoga routines that help improve both physical and mental well-being.",
+    experience: [
+      "Trainer at FitGym",
+      "Instructor at Wellness Studio"
+    ],
+    certifications: [
+      "Certified Yoga Trainer",
+      "CPR and First Aid Certified"
+    ],
+    specialties: [
+      "Mindfulness & Meditation",
+      "Flexibility & Balance",
+      "Personalized Yoga Plans"
+    ],
+    quote: "Breathe, stretch, and find your inner peace.",
+    learners: "1,787",
+    batch: "5",
+    course: "2"
+  },
+  david: {
+    name: "David Smith",
+    role: "Bodybuilding Coach",
+    about: "David Smith is a professional bodybuilding and strength training coach with more than 8 years of experience. He has trained athletes and fitness enthusiasts to achieve their peak performance through structured routines and nutrition plans.",
+    experience: [
+      "Coach at PowerGym",
+      "Trainer at FitPro"
+    ],
+    certifications: [
+      "Certified Strength & Conditioning Specialist (CSCS)",
+      "CPR and First Aid Certified"
+    ],
+    specialties: [
+      "Muscle Building & Strength Training",
+      "Nutrition Planning",
+      "Athletic Performance"
+    ],
+    quote: "Strength doesn’t come from what you can do, it comes from overcoming the things you once thought you couldn’t.",
+    learners: "2,100",
+    batch: "8",
+    course: "4"
+  },
+  sarah: {
+    name: "Sarah Lee",
+    role: "Cardio Trainer",
+    about: "Sarah Lee is a certified cardio fitness trainer with over 7 years of professional experience helping clients improve endurance, heart health, and overall fitness. Her sessions are known for their high energy, motivational coaching, and personalized workout plans designed to meet individual goals.",
+    experience: [
+      "Senior Cardio Coach – PulseFit Gym, Los Angeles (2019–Present)",
+      "Fitness Consultant – MoveWell Fitness Center (2016–2019)"
+    ],
+    certifications: [
+      "ACE Certified Personal Trainer",
+      "CPR and First Aid Certified"
+    ],
+    specialties: [
+      "HIIT & Aerobic Workouts",
+      "Endurance Training",
+      "Functional Fitness",
+      "Personalized Cardio Plans"
+    ],
+    quote: "Push your limits — your heart will thank you later.",
+    learners: "1,540",
+    batch: "6",
+    course: "3"
+  },
+  michael: {
+    name: "Michael Khan",
+    role: "CrossFit Expert",
+    about: "Michael Khan is a high-intensity CrossFit expert specializing in endurance, strength, and agility training. With 6 years of experience, he helps clients push limits and achieve maximum physical performance safely and effectively.",
+    experience: [
+      "CrossFit Coach at HIITZone",
+      "Fitness Mentor at GoFit"
+    ],
+    certifications: [
+      "CrossFit Level 2 Trainer",
+      "CPR and First Aid Certified"
+    ],
+    specialties: [
+      "High-Intensity Interval Training",
+      "Agility & Strength",
+      "Functional Fitness"
+    ],
+    quote: "Challenge yourself every day, and the results will follow.",
+    learners: "1,203",
+    batch: "4",
+    course: "1"
+  },
+  emma: {
+    name: "Emma Watson",
+    role: "Nutrition Coach",
+    about: "Emma Watson is a certified nutrition and wellness coach with 9 years of experience in creating personalized diet plans. She focuses on sustainable eating habits that complement workout goals and long-term health improvements.",
+    experience: [
+      "Diet Consultant at NutriLife",
+      "Trainer at FitWell"
+    ],
+    certifications: [
+      "Certified Nutrition Specialist (CNS)",
+      "CPR and First Aid Certified"
+    ],
+    specialties: [
+      "Personalized Diet Planning",
+      "Weight Management",
+      "Wellness Coaching"
+    ],
+    quote: "Eat well, feel well, live well.",
+    learners: "1,875",
+    batch: "5",
+    course: "2"
+  }
+};
+
+// ===== Function to Show Instructor Profile =====
+function showProfile(key) {
+  const p = instructors[key];
+  document.getElementById("instructor-list").style.display = "none";
+  document.getElementById("profile-page").style.display = "block";
+  document.getElementById("p-img").src = "assets/risen-wang-20jX9b35r_M-unsplash.jpg";
+  document.getElementById("p-name").textContent = p.name;
+  document.getElementById("p-role").textContent = p.role;
+  document.getElementById("p-about").textContent = p.about;
+  
+  // Update experience, certifications, specialties, and quote
+  document.getElementById("p-exp1").textContent = p.experience[0];
+  document.getElementById("p-exp2").textContent = p.experience[1];
+  document.getElementById("p-cert").textContent = p.certifications.join(", ");
+  document.getElementById("p-specialties").textContent = p.specialties.join(", ");
+  document.getElementById("p-quote").textContent = p.quote;
+  
+  document.getElementById("p-learners").textContent = p.learners;
+  document.getElementById("p-batch").textContent = p.batch;
+  document.getElementById("p-course").textContent = p.course;
+}
+
+// ===== Back Button Function =====
+function goBack() {
+  document.getElementById("instructor-list").style.display = "block";
+  document.getElementById("profile-page").style.display = "none";
+}
+</script>
+
+
 </body>
 </html>
