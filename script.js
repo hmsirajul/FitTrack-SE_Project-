@@ -136,55 +136,31 @@
 // });
 // ======= FitTrack+ Script =======
 
-// Utility function for showing toast messages
+// ✅ ======= TOAST SYSTEM =======
 function showToast(message, type = "info") {
-  const toast = document.getElementById("toast");
+  let toast = document.getElementById("toast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.id = "toast";
+    document.body.appendChild(toast);
+  }
   toast.textContent = message;
   toast.className = `toast show ${type}`;
-  setTimeout(() => (toast.className = "toast"), 3000);
+  toast.style.cssText = `
+    position:fixed; bottom:20px; left:50%; transform:translateX(-50%);
+    background:${type === "error" ? "#e74c3c" : type === "success" ? "#27ae60" : "#333"};
+    color:white; padding:10px 20px; border-radius:6px; z-index:9999; transition:opacity .5s;
+  `;
+  setTimeout(() => { toast.className = "toast"; toast.style.opacity = 0; }, 3000);
 }
 
-// ======= MODAL HANDLING =======
-const trainerModal = document.getElementById("trainerModal");
-const customerModal = document.getElementById("customerModal");
-const trainerBtn = document.getElementById("trainerLoginBtn");
-const customerBtn = document.getElementById("customerLoginBtn");
-
-// Open modals
-trainerBtn?.addEventListener("click", () => {
-  trainerModal.setAttribute("aria-hidden", "false");
-  trainerModal.classList.add("open");
-});
-customerBtn?.addEventListener("click", () => {
-  customerModal.setAttribute("aria-hidden", "false");
-  customerModal.classList.add("open");
-});
-
-// Close modals (using data-close or outside click)
-document.querySelectorAll("[data-close]").forEach(btn => {
-  btn.addEventListener("click", () => {
-    btn.closest(".modal").classList.remove("open");
-    btn.closest(".modal").setAttribute("aria-hidden", "true");
-  });
-});
-window.addEventListener("click", e => {
-  if (e.target.classList.contains("modal")) {
-    e.target.classList.remove("open");
-    e.target.setAttribute("aria-hidden", "true");
-  }
-});
-
-
-// ======= LOGIN & REGISTER HANDLING =======
-
-// Get elements
+// ✅ ======= MODAL HANDLING =======
 const loginBtn = document.getElementById("loginBtn");
 const loginDropdown = document.getElementById("loginDropdown");
 const loginModal = document.getElementById("loginModal");
 const loginTitle = document.getElementById("loginTitle");
 const registerBtn = document.getElementById("registerBtn");
 
-// Create Register Modal dynamically if not present
 let registerModal = document.getElementById("registerModal");
 if (!registerModal) {
   registerModal = document.createElement("div");
@@ -196,7 +172,7 @@ if (!registerModal) {
   registerModal.innerHTML = `
     <div style="background:white; width:380px; border-radius:8px; padding:20px; text-align:center; color:#333;">
       <h2>Register Account</h2>
-      <p style="font-size: 14px;">Already have an account? 
+      <p style="font-size:14px;">Already have an account?
         <a href="#" id="backToLogin" style="color:#0d6efd;">Login here</a>
       </p>
       <div style="text-align:left;">
@@ -216,47 +192,43 @@ if (!registerModal) {
   document.body.appendChild(registerModal);
 }
 
-// ======= DROPDOWN =======
-loginBtn?.addEventListener("click", () => {
+// ✅ ======= DROPDOWN =======
+loginBtn?.addEventListener("click", e => {
+  e.stopPropagation();
   loginDropdown.style.display = loginDropdown.style.display === "block" ? "none" : "block";
 });
 
-// Close dropdown when clicking outside
-window.addEventListener("click", (e) => {
+window.addEventListener("click", e => {
   if (!loginBtn.contains(e.target) && !loginDropdown.contains(e.target)) {
     loginDropdown.style.display = "none";
   }
 });
 
-// ======= LOGIN MODAL =======
+// ✅ ======= LOGIN MODAL =======
 function openModal(type) {
   loginDropdown.style.display = "none";
   loginModal.style.display = "flex";
   loginTitle.textContent = type === "customer" ? "Customer Login" : "Trainer Login";
 }
-
 function closeModal() {
   loginModal.style.display = "none";
 }
 
-// ======= REGISTER MODAL =======
+// ✅ ======= REGISTER MODAL =======
 registerBtn?.addEventListener("click", () => {
   loginModal.style.display = "none";
   registerModal.style.display = "flex";
 });
-
 document.getElementById("closeRegister")?.addEventListener("click", () => {
   registerModal.style.display = "none";
 });
-
-// Back to login link inside register modal
 document.getElementById("backToLogin")?.addEventListener("click", (e) => {
   e.preventDefault();
   registerModal.style.display = "none";
   loginModal.style.display = "flex";
 });
 
-// ======= ESC KEY TO CLOSE MODALS =======
+// ✅ ESC key closes modals
 window.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     if (loginModal.style.display === "flex") closeModal();
@@ -264,153 +236,68 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
-
-
-// // ======= LOGIN DROPDOWN AND MODAL HANDLING =======
-
-// // Get DOM elements
-// const loginBtn = document.getElementById("loginBtn");
-// const loginDropdown = document.getElementById("loginDropdown");
-// const loginModal = document.getElementById("loginModal");
-// const loginTitle = document.getElementById("loginTitle");
-
-// // Toggle dropdown visibility
-// loginBtn?.addEventListener("click", () => {
-//   loginDropdown.style.display = loginDropdown.style.display === "block" ? "none" : "block";
-// });
-
-// // Close dropdown when clicking outside
-// window.addEventListener("click", (e) => {
-//   if (!loginBtn.contains(e.target) && !loginDropdown.contains(e.target)) {
-//     loginDropdown.style.display = "none";
-//   }
-// });
-
-// // Open modal for selected login type
-// function openModal(type) {
-//   loginDropdown.style.display = "none";
-//   loginModal.style.display = "flex";
-//   loginTitle.textContent = type === "customer" ? "Customer Login" : "Trainer Login";
-// }
-
-// // Close modal
-// function closeModal() {
-//   loginModal.style.display = "none";
-// }
-
-// // ======= OPTIONAL: Add ESC key to close modal =======
-// window.addEventListener("keydown", (e) => {
-//   if (e.key === "Escape" && loginModal.style.display === "flex") {
-//     closeModal();
-//   }
-// });
-
-// ======= LOGIN FORMS =======
-const trainerForm = document.getElementById("trainerForm");
-const customerForm = document.getElementById("customerForm");
-
-// Demo login data
+// ✅ ======= DEMO LOGIN VALIDATION =======
 const demoTrainer = { email: "trainer@fitflow.test", password: "trainer123" };
 const demoCustomer = { email: "customer@fitflow.test", password: "customer123" };
 
-trainerForm?.addEventListener("submit", e => {
+document.getElementById("trainerForm")?.addEventListener("submit", e => {
   e.preventDefault();
   const email = document.getElementById("trainerEmail").value;
   const pass = document.getElementById("trainerPassword").value;
   if (email === demoTrainer.email && pass === demoTrainer.password) {
     showToast("Trainer login successful!", "success");
-    trainerModal.classList.remove("open");
+    closeModal();
   } else {
     showToast("Invalid trainer credentials.", "error");
   }
 });
 
-customerForm?.addEventListener("submit", e => {
+document.getElementById("customerForm")?.addEventListener("submit", e => {
   e.preventDefault();
   const email = document.getElementById("customerEmail").value;
   const pass = document.getElementById("customerPassword").value;
   if (email === demoCustomer.email && pass === demoCustomer.password) {
     showToast("Customer login successful!", "success");
-    customerModal.classList.remove("open");
+    closeModal();
   } else {
     showToast("Invalid customer credentials.", "error");
   }
 });
 
-// ======= WORKOUT PLAN ACTIONS =======
-document.querySelectorAll("[data-action='save-plan']").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const plan = btn.getAttribute("data-plan");
-    let savedPlans = JSON.parse(localStorage.getItem("savedPlans") || "[]");
-    if (!savedPlans.includes(plan)) {
-      savedPlans.push(plan);
-      localStorage.setItem("savedPlans", JSON.stringify(savedPlans));
-      showToast(`Saved "${plan}" plan.`, "success");
-    } else {
-      showToast(`"${plan}" already saved.`, "info");
-    }
-  });
-});
+// ✅ ======= CHAT SYSTEM =======
+function openChat() { document.getElementById("chatBox").style.display = "block"; }
+function closeChat() { document.getElementById("chatBox").style.display = "none"; }
 
-document.querySelectorAll("[data-action='start-plan']").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const plan = btn.getAttribute("data-plan");
-    showToast(`Starting plan: ${plan}`, "info");
-  });
-});
-
-
-//chatting system
-
-// OPEN CHAT
-function openChat() {
-    document.getElementById("chatBox").style.display = "block";
-}
-// CLOSE CHAT
-function closeChat() {
-    document.getElementById("chatBox").style.display = "none";
-}
-// SEND MESSAGE
 function sendMessage() {
-    let input = document.getElementById("userInput");
-    let message = input.value.trim();
-    if (message === "") return;
-
-    // Show user's message
-    let chatMessages = document.getElementById("chatMessages");
-    chatMessages.innerHTML += `<div style="text-align:right;"><div style="display:inline-block;background:#6A0DAD;color:white;padding:8px;border-radius:5px;margin-bottom:10px;max-width:80%;">${message}</div></div>`;
-    input.value = "";
-
-    // Auto AI reply
-    setTimeout(() => {
-        let reply = getAIReply(message);
-        chatMessages.innerHTML += `<div style="background:#eee;padding:8px;border-radius:5px;margin-bottom:10px;max-width:80%;">${reply}</div>`;
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-    }, 800);
+  let input = document.getElementById("userInput");
+  let message = input.value.trim();
+  if (message === "") return;
+  let chatMessages = document.getElementById("chatMessages");
+  chatMessages.innerHTML += `<div style="text-align:right;"><div style="display:inline-block;background:#6A0DAD;color:white;padding:8px;border-radius:5px;margin-bottom:10px;max-width:80%;">${message}</div></div>`;
+  input.value = "";
+  setTimeout(() => {
+    let reply = getAIReply(message);
+    chatMessages.innerHTML += `<div style="background:#eee;padding:8px;border-radius:5px;margin-bottom:10px;max-width:80%;">${reply}</div>`;
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }, 800);
 }
 
-// SIMPLE AI BOT LOGIC
-function getAIReply(userMessage) {
-    userMessage = userMessage.toLowerCase();
-    if (userMessage.includes("hello") || userMessage.includes("hi")) return "Hello! 😊 How can I assist you?";
-    if (userMessage.includes("help")) return "Sure! Tell me what you need help with.";
-    if (userMessage.includes("course")) return "We offer many courses. Which subject are you interested in?";
-    if (userMessage.includes("thanks") || userMessage.includes("thank you")) return "You're welcome! 😊";
-    return "I'm not sure, but I am learning every day 🤖. Can you say it another way?";
+function getAIReply(msg) {
+  msg = msg.toLowerCase();
+  if (msg.includes("hello") || msg.includes("hi")) return "Hello! 😊 How can I assist you?";
+  if (msg.includes("help")) return "Sure! Tell me what you need help with.";
+  if (msg.includes("course")) return "We offer many courses. Which subject are you interested in?";
+  if (msg.includes("thanks")) return "You're welcome! 😊";
+  return "I'm not sure, but I'm learning every day 🤖. Can you say it another way?";
 }
 
-// ======= PROGRESS TRACKING =======
-const progressForm = document.getElementById("progressForm");
-const progressList = document.getElementById("progressList");
-
+// ✅ ======= PROGRESS TRACKING =======
 function renderProgress() {
-  const progressData = JSON.parse(localStorage.getItem("progressData") || "[]");
-  progressList.innerHTML = progressData
-    .map(p => `<div class="progress-entry">📊 ${p.weight}kg — ${p.note}</div>`)
-    .join("");
+  const data = JSON.parse(localStorage.getItem("progressData") || "[]");
+  const list = document.getElementById("progressList");
+  if (list) list.innerHTML = data.map(p => `<div class="progress-entry">📊 ${p.weight}kg — ${p.note}</div>`).join("");
 }
-
-progressForm?.addEventListener("submit", e => {
+document.getElementById("progressForm")?.addEventListener("submit", e => {
   e.preventDefault();
   const weight = document.getElementById("weight").value;
   const note = document.getElementById("note").value;
@@ -420,23 +307,20 @@ progressForm?.addEventListener("submit", e => {
     localStorage.setItem("progressData", JSON.stringify(data));
     renderProgress();
     showToast("Progress logged!", "success");
-    progressForm.reset();
+    e.target.reset();
   }
 });
 renderProgress();
 
-// ======= COMMUNITY POSTS =======
-const postForm = document.getElementById("postForm");
-const feed = document.getElementById("feed");
 
+
+// ✅ ======= COMMUNITY POSTS =======
 function renderPosts() {
   const posts = JSON.parse(localStorage.getItem("posts") || "[]");
-  feed.innerHTML = posts
-    .map(p => `<div class="post-item">💬 ${p.text}</div>`)
-    .join("");
+  const feed = document.getElementById("feed");
+  if (feed) feed.innerHTML = posts.map(p => `<div class="post-item">💬 ${p.text}</div>`).join("");
 }
-
-postForm?.addEventListener("submit", e => {
+document.getElementById("postForm")?.addEventListener("submit", e => {
   e.preventDefault();
   const text = document.getElementById("postInput").value.trim();
   if (text) {
@@ -444,8 +328,18 @@ postForm?.addEventListener("submit", e => {
     posts.unshift({ text });
     localStorage.setItem("posts", JSON.stringify(posts));
     renderPosts();
-    postForm.reset();
+    e.target.reset();
     showToast("Post shared!", "success");
   }
 });
 renderPosts();
+// ======== SLIDER SCRIPT ======== -->
+
+let ind = 0;
+const total = 5; // total number of reviews
+const slider = document.getElementById("review-inner");
+
+setInterval(() => {
+  ind = (ind + 1) % total;
+  slider.style.transform = `translateX(-${ind * 100}%)`;
+}, 3000); // every 10 seconds
