@@ -339,7 +339,6 @@
 
 <!-- Floating Chat Buttons -->
 <!-- Chat System by Md Sirajul Islam -->
-
 <!-- Floating Chat Button -->
 <div style="position:fixed; right:20px; bottom:20px; display:flex; flex-direction:column; gap:10px; z-index:999;">
     <button onclick="openChat()" style="width:50px;height:50px;border-radius:50%;background:#00C853;border:none;cursor:pointer;font-size:22px;color:white;">💬</button>
@@ -419,13 +418,14 @@ function sendMessage() {
     }, 600);
 }
 
-// Simple AI simulation
+// Simple AI simulation with fixed creator response
 function generateAIResponse(userMessage) {
     const msg = userMessage.toLowerCase();
-    if (msg.includes('hello') || msg.includes('hi')) {
+
+    if (msg.includes('who made you') || msg.includes('your creator') || msg.includes('who created you')) {
+        return 'I was created by Md Sirajul Islam. 😊';
+    } else if (msg.includes('hello') || msg.includes('hi')) {
         return 'Hello! 👋 How are you today?';
-    } else if (msg.includes('your name')) {
-        return 'I am your friendly AI assistant created by Md Sirajul Islam.';
     } else if (msg.includes('help')) {
         return 'Sure! Tell me what you need help with.';
     } else {
